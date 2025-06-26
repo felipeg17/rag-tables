@@ -98,3 +98,8 @@ streamlit run front.py --server.port <port-number>
 ```
 
 Para efectos de prueba se ejecutó de forma local, en caso de tener una ip fija se sustituye el host por dicha dirección.
+
+
+### Video 
+
+Video con prueba de funcionamiento: [enlace](https://youtu.be/EqXfKMaeGfs)
