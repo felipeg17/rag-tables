@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  rag-tables-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fastapi/rag-tables-ms:0.0.1
+    container_name: rag-tables-ms_0.0.1
+    network_mode: "host"
+    env_file:
+      - .env
+    environment:
+      - PYTHONPATH=/ms
+    restart: unless-stopped
+  
+  rag-tables-frontend:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    image: streamlit/rag-tables-frontend:0.0.1
+    container_name: rag-tables-frontend
+    network_mode: "host"
+    env_file:
+      - .env
+    restart: unless-stopped
+    depends_on:
+      - rag-tables-api
