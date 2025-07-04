@@ -99,6 +99,25 @@ streamlit run front.py --server.port <port-number>
 
 Para efectos de prueba se ejecutó de forma local, en caso de tener una ip fija se sustituye el host por dicha dirección.
 
+#### Docker
+
+El proyecto cuenta con un docker compose para ejecutar los contenedores del ms y del front de forma conjunta.
+
+```bash
+# Si no se ha constuido la imagen
+docker compose up -d --build 
+
+# Solo inicializar
+docker compose up -d
+
+# Dar de baja 
+docker compose down
+
+# logs
+docker compose logs -f rag-tables-api
+
+```
+
 
 ### Video 
 

@@ -376,7 +376,8 @@ class ProcessDocument():
     db_host = os.getenv("CHROMADB_HOST")
     db_port = os.getenv("CHROMADB_PORT")
     return chromadb.HttpClient(
-      host=f"http://{db_host}:{db_port}",
+      host=db_host,
+      port=int(db_port),
       tenant=tenant,
       database=database
     )
